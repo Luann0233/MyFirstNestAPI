@@ -36,3 +36,7 @@ $ yarn dev
 $ yarn studio
 
 ```
+
+## 🔖 Collection Postman
+
+Baixe [aqui](https://drive.google.com/file/d/1eqmk4VhwOqYBzRf8ZESOisP4qBngHzNv/view) a collection do postman com as requisições.
