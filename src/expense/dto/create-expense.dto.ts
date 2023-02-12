@@ -1,5 +1,12 @@
 import { Expense } from '../entities/expense.entity';
-import { IsNumber, IsString, MaxLength } from 'class-validator';
+import {
+  IsNumber,
+  IsPositive,
+  IsString,
+  MaxLength,
+  IsDateString,
+  IsISO8601,
+} from 'class-validator';
 
 export class CreateExpenseDto extends Expense {
   @IsString()
@@ -7,10 +14,12 @@ export class CreateExpenseDto extends Expense {
   descricao: string;
 
   @IsString()
-  @MaxLength(10)
+  @IsISO8601()
+  @IsDateString({ strict: true } as any)
   data: string;
 
   @IsNumber()
+  @IsPositive()
   valor: number;
 
   @IsNumber()
