@@ -33,7 +33,13 @@ export class ExpenseService {
     return `This action updates a #${id} expense`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} expense`;
+  async remove(id: number) {
+    await this.prisma.expense.delete({
+      where: {
+        id,
+      },
+    });
+
+    return { message: 'Despesa apagada com sucesso!' };
   }
 }
