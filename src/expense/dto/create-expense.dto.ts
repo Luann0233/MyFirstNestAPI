@@ -15,7 +15,7 @@ export class CreateExpenseDto extends Expense {
 
   @IsString()
   @IsISO8601()
-  @IsDateString({ strict: true } as any)
+  @IsDateString()
   data: string;
 
   @IsNumber()

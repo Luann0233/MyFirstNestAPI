@@ -12,11 +12,19 @@ export class ExpenseService {
   async create(createExpenseDto: CreateExpenseDto) {
     const data: Prisma.ExpenseCreateInput = createExpenseDto;
 
-    const createdExpense = await this.prisma.expense.create({ data });
+    try {
+      const createdExpense = await this.prisma.expense.create({ data });
 
-    return {
-      ...createdExpense,
-    };
+      return createdExpense;
+    } catch (e) {
+      if (e instanceof Prisma.PrismaClientKnownRequestError) {
+        if (e.code === 'P2003') {
+          return {
+            message: 'Esse usuário não exite. Indique um usuário válido!',
+          };
+        }
+      }
+    }
   }
 
   findAll() {
