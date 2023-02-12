@@ -25,8 +25,6 @@ export class UserService {
   }
 
   async findAll() {
-    const length = await this.prisma.user.count();
-    console.log(length);
     return this.prisma.user.findMany();
   }
 
