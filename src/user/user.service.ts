@@ -31,7 +31,13 @@ export class UserService {
   }
 
   findOne(id: number) {
-    return this.prisma.user.findUnique({
+    return this.prisma.user.findUnique({ where: { id } });
+  }
+
+  findByEmail(email: string) {
+    return this.prisma.user.findUnique({ where: { email } });
+  }
+
       where: {
         id,
       },
