@@ -10,19 +10,19 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Usario {
+model User {
   id Int @id @default(autoincrement())
   email String @unique
-  senha String
-  nome String
-  despesas Despesas[]
+  password String
+  name String
+  expense Expense[]
 }
 
-model Despesas {
+model Expense {
   id Int @id @default(autoincrement())
   descricao String
   data String
   valor Float
-  author Usario @relation(fields: [authorId], references: [id])
+  author User @relation(fields: [authorId], references: [id])
   authorId Int
 }

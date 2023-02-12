@@ -1,20 +1,20 @@
 -- CreateTable
-CREATE TABLE "Usario" (
+CREATE TABLE "User" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "email" TEXT NOT NULL,
-    "senha" TEXT NOT NULL,
-    "nome" TEXT NOT NULL
+    "password" TEXT NOT NULL,
+    "name" TEXT NOT NULL
 );
 
 -- CreateTable
-CREATE TABLE "Despesas" (
+CREATE TABLE "Expense" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "descricao" TEXT NOT NULL,
     "data" TEXT NOT NULL,
     "valor" REAL NOT NULL,
     "authorId" INTEGER NOT NULL,
-    CONSTRAINT "Despesas_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "Usario" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT "Expense_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Usario_email_key" ON "Usario"("email");
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
