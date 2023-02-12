@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "5072dec3-37c0-4ab1-93ea-78952e2199bf",
+		"name": "My-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23883125"
+	},
+	"item": [
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Cadastrar Usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoibHVhbkBnbWFpbC5jb20iLCJuYW1lIjoiTHVhbiBSb2NoYSIsImlhdCI6MTY3NjIxMTY2MCwiZXhwIjoxNjc2Mjk4MDYwfQ.DJ4gbKtknb53eN-lp7UwXtM_10c-gLIpl0B0A1IuKb8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"teste@gmail.com\",\r\n    \"password\": \"Senha123\",\r\n    \"name\": \"Usuario Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Usuários",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImVtYWlsIjoibHVhbjNAZ21haWwuY29tIiwibmFtZSI6Ikx1YW4gMyBSb2NoYSIsImlhdCI6MTY3NjIxMjU4NiwiZXhwIjoxNjc2Mjk4OTg2fQ.QxmyHfF6mZY8R-SsY_FuSPe5gdslD0C9mAlgmmu-aYI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Usuario 333333 Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar Usuários",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImVtYWlsIjoibHVhbjNAZ21haWwuY29tIiwibmFtZSI6Ikx1YW4gMyBSb2NoYSIsImlhdCI6MTY3NjIxMjU4NiwiZXhwIjoxNjc2Mjk4OTg2fQ.QxmyHfF6mZY8R-SsY_FuSPe5gdslD0C9mAlgmmu-aYI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar usuários",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoibHVhbkBnbWFpbC5jb20iLCJuYW1lIjoiTHVhbiBSb2NoYSIsImlhdCI6MTY3NjIxNTUwMSwiZXhwIjoxNjc2MzAxOTAxfQ.p6HjSjXZ759SPGFyoV3G0NfPjX9d8wLGYT9_KUf5SRc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoibHVhbkBnbWFpbC5jb20iLCJuYW1lIjoiTHVhbiBSb2NoYSIsImlhdCI6MTY3NjIxMjQ1MiwiZXhwIjoxNjc2Mjk4ODUyfQ.GU0xF854OjReEB3BE7FFkhqPpPV8yKi7W3HS6SfrOCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Despesas",
+			"item": [
+				{
+					"name": "Cadastrar Despesas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoibHVhbkBnbWFpbC5jb20iLCJuYW1lIjoiTHVhbiBSb2NoYSIsImlhdCI6MTY3NjIxMTY2MCwiZXhwIjoxNjc2Mjk4MDYwfQ.DJ4gbKtknb53eN-lp7UwXtM_10c-gLIpl0B0A1IuKb8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Despesa Usuario 3\",\r\n    \"data\": \"2023-01-31T12:00:00-03:00\",\r\n    \"valor\": 10,\r\n    \"authorId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/expense",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"expense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Despesa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoibHVhbkBnbWFpbC5jb20iLCJuYW1lIjoiTHVhbiBSb2NoYSIsImlhdCI6MTY3NjIyMTU4NywiZXhwIjoxNjc2MzA3OTg3fQ.QBMEUvVLVxwVd8JXoow7txWl8pdI6LmOzK-cEA3LTBc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Despesa do Luan\",\r\n    \"data\": \"2023-01-31T12:00:00-03:00\",\r\n    \"valor\": 12,\r\n    \"authorId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/expense/6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"expense",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Despesas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoibHVhbkBnbWFpbC5jb20iLCJuYW1lIjoiTHVhbiBSb2NoYSIsImlhdCI6MTY3NjIxNTUwMSwiZXhwIjoxNjc2MzAxOTAxfQ.p6HjSjXZ759SPGFyoV3G0NfPjX9d8wLGYT9_KUf5SRc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/expense/6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"expense",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Despesa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoibHVhbkBnbWFpbC5jb20iLCJuYW1lIjoiTHVhbiBSb2NoYSIsImlhdCI6MTY3NjIxNTUwMSwiZXhwIjoxNjc2MzAxOTAxfQ.p6HjSjXZ759SPGFyoV3G0NfPjX9d8wLGYT9_KUf5SRc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"luan@gmail.com\",\r\n    \"password\": \"Luan123\",\r\n    \"name\": \"Luan Rocha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/expense/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"expense",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar Despesa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoibHVhbkBnbWFpbC5jb20iLCJuYW1lIjoiTHVhbiBSb2NoYSIsImlhdCI6MTY3NjIyMDUxNiwiZXhwIjoxNjc2MzA2OTE2fQ.z5e_AuGpxDoJtziVEMqAgw5DX3pnUarEPJUsJ8apos0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/expense/6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"expense",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"teste@gmail.com\",\r\n    \"password\": \"Senha123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuário logado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoibHVhbkBnbWFpbC5jb20iLCJuYW1lIjoiTHVhbiBSb2NoYSIsImlhdCI6MTY3NjIxMjQ1MiwiZXhwIjoxNjc2Mjk4ODUyfQ.GU0xF854OjReEB3BE7FFkhqPpPV8yKi7W3HS6SfrOCY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/me",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
