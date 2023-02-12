@@ -1,7 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { CreateExpenseDto } from './dto/create-expense.dto';
-import { UpdateExpenseDto } from './dto/update-expense.dto';
-import { Expense } from './entities/expense.entity';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
 
@@ -37,17 +35,37 @@ export class ExpenseService {
     });
   }
 
-  update(id: number, updateExpenseDto: UpdateExpenseDto) {
-    return `This action updates a #${id} expense`;
+  async update(id: number, updateExpenseDto, currentUser) {
+    const expense = await this.findOne(id);
+
+    if (currentUser.id === expense.authorId) {
+      delete updateExpenseDto.authorId;
+      const updatedExpense = await this.prisma.expense.update({
+        where: {
+          id,
+        },
+        data: updateExpenseDto,
+      });
+
+      return updatedExpense;
+    } else {
+      return { message: 'Somente o dono dessa Despesa pode editá-la!' };
+    }
   }
 
-  async remove(id: number) {
-    await this.prisma.expense.delete({
-      where: {
-        id,
-      },
-    });
+  async remove(id: number, currentUser) {
+    const expense = await this.findOne(id);
 
-    return { message: 'Despesa apagada com sucesso!' };
+    if (currentUser.id === expense.authorId) {
+      await this.prisma.expense.delete({
+        where: {
+          id,
+        },
+      });
+
+      return { message: 'Despesa apagada com sucesso!' };
+    } else {
+      return { message: 'Somente o dono dessa Despesa pode apagá-la!' };
+    }
   }
 }

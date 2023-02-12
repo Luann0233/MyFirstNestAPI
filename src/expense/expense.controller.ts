@@ -10,6 +10,8 @@ import {
 import { ExpenseService } from './expense.service';
 import { CreateExpenseDto } from './dto/create-expense.dto';
 import { UpdateExpenseDto } from './dto/update-expense.dto';
+import { CurrentUser } from 'src/auth/decorators/current-user.decorator';
+import { User } from './../user/entities/user.entity';
 
 @Controller('expense')
 export class ExpenseController {
@@ -31,12 +33,16 @@ export class ExpenseController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateExpenseDto: UpdateExpenseDto) {
-    return this.expenseService.update(+id, updateExpenseDto);
+  update(
+    @Param('id') id: string,
+    @Body() updateExpenseDto: UpdateExpenseDto,
+    @CurrentUser() currentUser: User,
+  ) {
+    return this.expenseService.update(+id, updateExpenseDto, currentUser);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.expenseService.remove(+id);
+  remove(@Param('id') id: string, @CurrentUser() currentUser: User) {
+    return this.expenseService.remove(+id, currentUser);
   }
 }
