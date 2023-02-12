@@ -53,8 +53,23 @@ export class UserService {
     return this.prisma.user.findUnique({ where: { email } });
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: number, updateUserDto: UpdateUserDto) {
+    const updateUserFormated = {
+      ...updateUserDto,
+      password: await bcrypt.hash(updateUserDto.password, 10),
+    };
+
+    const updateUser = await this.prisma.user.update({
+      where: {
+        id,
+      },
+      data: updateUserFormated,
+    });
+
+    return {
+      ...updateUser,
+      password: undefined,
+    };
   }
 
   remove(id: number) {
