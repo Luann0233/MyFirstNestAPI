@@ -20,11 +20,13 @@ export class ExpenseService {
   }
 
   findAll() {
-    return `This action returns all expense`;
+    return this.prisma.expense.findMany();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} expense`;
+    return this.prisma.expense.findUnique({
+      where: { id },
+    });
   }
 
   update(id: number, updateExpenseDto: UpdateExpenseDto) {
