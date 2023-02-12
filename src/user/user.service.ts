@@ -25,11 +25,28 @@ export class UserService {
   }
 
   async findAll() {
-    return this.prisma.user.findMany();
+    const listUsers = await this.prisma.user.findMany({
+      select: {
+        id: true,
+        email: true,
+        name: true,
+        expense: true,
+      },
+    });
+    return listUsers;
   }
 
-  findOne(id: number) {
-    return this.prisma.user.findUnique({ where: { id } });
+  async findOne(id: number) {
+    const user = await this.prisma.user.findUnique({
+      where: { id },
+      select: {
+        id: true,
+        email: true,
+        name: true,
+        expense: true,
+      },
+    });
+    return user;
   }
 
   findByEmail(email: string) {
