@@ -37,7 +37,7 @@ $ yarn studio
 
 # 🔖 Collection Postman
 
-Baixe [aqui](https://drive.google.com/file/d/1eqmk4VhwOqYBzRf8ZESOisP4qBngHzNv/view) a collection do postman com as requisições. Ou se preferir o arquivo está na raaíz do projeto.
+Baixe [aqui](https://drive.google.com/file/d/1eqmk4VhwOqYBzRf8ZESOisP4qBngHzNv/view?usp=share_link) a collection do postman com as requisições. Ou se preferir o arquivo está na raaíz do projeto.
 
 # Endpoint Login / Usuários
 `URL(POST)`: http://localhost:3000/login`
