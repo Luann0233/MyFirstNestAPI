@@ -8,6 +8,18 @@ export class ExpenseService {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(createExpenseDto: CreateExpenseDto) {
+    const date: Date = new Date();
+    const year: string = date.toLocaleString('default', { year: 'numeric' });
+    const month: string = date.toLocaleString('default', { month: '2-digit' });
+    const day: string = date.toLocaleString('default', { day: '2-digit' });
+    const dataAtualFormatada: string = year + '-' + month + '-' + day;
+
+    if (dataAtualFormatada < createExpenseDto.data) {
+      return {
+        message: 'Data inválida. A data não pode ser maior do que a atual!',
+      };
+    }
+
     const data: Prisma.ExpenseCreateInput = createExpenseDto;
 
     try {
