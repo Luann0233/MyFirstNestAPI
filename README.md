@@ -34,6 +34,8 @@ $ yarn dev
 ```bash
 $ yarn studio
 ```
+![image](https://user-images.githubusercontent.com/52284404/218580975-c0097d0c-c4a9-4b1a-b5dc-03c4f1958967.png)
+
 
 # 🔖 Collection Postman
 
