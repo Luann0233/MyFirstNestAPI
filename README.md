@@ -45,7 +45,7 @@ Baixe [aqui](https://drive.google.com/file/d/1eqmk4VhwOqYBzRf8ZESOisP4qBngHzNv/v
 `BODY`:
 ```JSON
 {
-    "email": "example@email.com",
+    "email": "teste@gmail.com",
     "password": "Senha123"
 }
 ```
@@ -60,9 +60,9 @@ Baixe [aqui](https://drive.google.com/file/d/1eqmk4VhwOqYBzRf8ZESOisP4qBngHzNv/v
 `BODY`:
 ```JSON
 {
-    "email": "example2@email.com",
+    "email": "teste10@gmail.com",
     "password": "Senha123",
-    "name": "example2"
+    "name": "Teste10"
 }
 ```
 ---
@@ -98,7 +98,8 @@ Baixe [aqui](https://drive.google.com/file/d/1eqmk4VhwOqYBzRf8ZESOisP4qBngHzNv/v
 {
     "descricao": "Despesa 1",
     "data": "2023-01-31",
-    "valor": 10
+    "valor": 10,
+    "authorId": 1,
 }
 ```
 ---
@@ -116,7 +117,8 @@ Baixe [aqui](https://drive.google.com/file/d/1eqmk4VhwOqYBzRf8ZESOisP4qBngHzNv/v
 {
     "descricao": "Despesa Edit",
     "data": "2023-02-01",
-    "valor": 12
+    "valor": 12,
+    "authorId": 1,
 }
 ```
 ---
